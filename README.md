@@ -1,3 +1,6 @@
+
 # safenet-network-hsm
 
-[![Join the chat at https://gitter.im/gemalto-oss/safenet-network-hsm](https://badges.gitter.im/gemalto-oss/safenet-network-hsm.svg)](https://gitter.im/gemalto-oss/safenet-network-hsm?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+We're hard at work (talking with legal), and will be committing code very soon. But in the meantime, we'd love to hear from you. Join us on Gitter or Slack... it's all good.
+
+[![Join the chat at https://gitter.im/gemalto-oss/safenet-network-hsm](https://badges.gitter.im/gemalto-oss/safenet-network-hsm.svg)](https://gitter.im/gemalto-oss/safenet-network-hsm?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Join the chat at https://gemalto-oss.slack.com](http://slackin.apps.cf-hsm.io/badge.svg)](https://slackin.apps.cf-hsm.io)
