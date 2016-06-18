@@ -1,3 +1,6 @@
+
+
+
 # safenet-network-hsm
 - - -
 
@@ -55,54 +58,56 @@ Once the tile is uploaded to PCF environment:
 
 ## Use the SafeNet Network HSM Service Broker using the CLI
 **Note:** Because of the sensitive data used in the command, you may choose to turn off ~/.bash_history before executing this command. In Linux this is done with the command:
-	```
+
 	set +o history
-	```
-.  After completing the command, ~/.bash_history is re-enabled with the command:
-	```
+After completing the command, ~/.bash_history is re-enabled with the command:
+	
 	set -o history
-	```
+	
 *   Login to your PCF Instance:
-	```
-    cf api **\<CF_API_ENDPOINT\>** [--skip-ssl-validation]
-	cf login -u **\<USER\>** -p **\<PASSWORD\>**
-	```
+
+	    cf api <cfApiEndpoint> [--skip-ssl-validation]
+	    cf login -u <user> -p <password>
+	
      **Note:** you will be prompted to select the desired org and space if you have multiple org/spaces.
 *   Navigate to your application
 *   The service broker is register using:
-	```
-	$ cf create-service-broker <myBrokerName> <apiKey> <apiSecret> <apiEndPoint>
-	```
+
+		$ cf create-service-broker <myBrokerName> <apiKey> <apiSecret> <apiEndPoint>
+	
 
 	For example:
-	```
-	$ cf create-service-broker hsm-service-broker kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss https://servicebroker.apps.cf-hsm.io/xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx
-	```
+	
+		$ cf create-service-broker hsm-service-broker kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss https://servicebroker.apps.cf-hsm.io/xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx
+	
 
 *   To enable access to the newly registered service broker, use:
-	```
-	$ cf enable-service-access <myBrokerName>
-	```
+		$ cf enable-service-access <myBrokerName>
+	
 	For example:
-	```
-	$ cf enable-service-access hsm-service-broker
-	```
+	
+		$ cf enable-service-access hsm-service-broker
+		
 *   To create a service that can be used by applications, use:
-	```
-	$ cf create-service <myBrokerName> <brokerPlan> <serviceInstance>
-	```
+
+		$ cf create-service <myBrokerName> <brokerPlan> <serviceInstance>
+	
 	For example:
-	```
-	$ cf create-service hsm-service-broker small_partition hsm
-	```
-*   Bind your application to the service broker
-	```
-	$ cf bind-service <appName> <serviceInstance>
-	```
+	
+		$ cf create-service hsm-service-broker small_partition hsm
+	
+*   To bind your application to the service broker, use:
+
+		$ cf bind-service <appName> <serviceInstance>
 	For example:
-	```
-	$ cf bind-service myApp hsm
-	```
+	
+		$ cf bind-service myApp hsm
+*    To restage the application, use:
+
+	    $ cf restage <appName>
+	For example:
+		
+		$cf restage myApp
 
 ## Additional Resources
 *  [Official Documentation](http://cf-hsm.io/docs/register-cf-hsm-io-service-broker/)
